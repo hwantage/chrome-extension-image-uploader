@@ -1,0 +1,63 @@
+.ui-btn {
+  margin-top: 25px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+span.uploader img {
+  width: 100px;
+  height: 80px;
+  margin: 1px;
+  border: solid 1px #d9d9d9;
+  vertical-align: top;
+}
+
+.paste-uploader {
+  margin-bottom: 2px;
+}
+
+.paste-uploader-focused {
+  margin-bottom: 2px;
+  background-color: #e6f7ff;
+}
+
+.paste-uploader-icon {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  padding-bottom: 5px;
+}
+
+.normal-img {
+  width: 80px;
+  height: 60px;
+  cursor: pointer;
+  border: 1px solid #d9d9d9;
+}
+
+.selected-img {
+  width: 80px;
+  height: 60px;
+  cursor: pointer;
+  border: 2px solid #1890ff;
+}
+
+.header-img-list {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  max-width: 1000;
+  border-bottom: 1px solid rgb(240 240 240);
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  margin-top: -10px;
+}
+
+.header-img-item {
+  display: inline-flex;
+  padding: 3px;
+}
+
+.btn-img-download {
+  width: 20px;
+  float: right;
+}

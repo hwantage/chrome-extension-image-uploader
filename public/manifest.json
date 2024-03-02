@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "short_name": "fooding-extension",
+  "name": "UX 문제점 신고",
+  "version": "0.1",
+  "description": "제품 UX 문제를 캡처 후 신고하는 기능",
+  "icons": {
+    "16": "fooding.png",
+    "48": "fooding.png",
+    "128": "fooding.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_icon": "fooding.png",
+    "default_title": "Fooding"
+  },
+  "permissions": ["activeTab", "tabs", "storage"],
+  "host_permissions": ["http://localhost:3000/*"]
+}
