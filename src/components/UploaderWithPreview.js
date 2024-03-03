@@ -28,6 +28,7 @@ const PasteArea = (props) => {
   let [uploadedFiles, setUploadedFiles] = useState([]); // 파일 목록 관리
   let [progressRate, setProgressRate] = useState(0);
   let [progressStatus, setProgressStatus] = useState(0);
+  let [imageCacheRenderer, setImageCacheRenderer] = useState(0);
 
   useEffect(() => {
     ViewService.getFileList(props.issueIdx)
@@ -90,6 +91,14 @@ const PasteArea = (props) => {
 
   usePasteUpload(props, containerRef, null);
 
+  // 이미지 수정 팝업 닫기 한 경우 이미지 수정사항이 발생했을 수 있으니 파일 목록 다시 그리기
+  const onEditCompleted = useCallback((changedFiles) => {
+    setUploadedFiles((uploadedFiles) => [...changedFiles]);
+    setIsFocused(true);
+    setIsFocused(false);
+    setImageCacheRenderer(imageCacheRenderer + 1);
+  }, []);
+
   return (
     <>
       <div ref={containerRef}>
@@ -120,6 +129,8 @@ const PasteArea = (props) => {
           onDeleteFile={onDeleteFile}
           progressRate={progressRate}
           progressStatus={progressStatus}
+          onEditCompleted={onEditCompleted}
+          imageCacheRenderer={imageCacheRenderer}
         />
       </div>
     </>
@@ -162,6 +173,11 @@ const PreviewArea = (props) => {
     setModalRerender(++modalRerender);
   };
 
+  // UploadFileEditor 모달 창 닫기시 호출될 펑션
+  const closedUploadFileEditor = async (uploadedFiles) => {
+    props.onEditCompleted(uploadedFiles);
+  };
+
   return (
     <>
       <br />
@@ -177,7 +193,9 @@ const PreviewArea = (props) => {
                   props.issueIdx +
                   "/" +
                   fileName +
-                  "?thumbnail=true"
+                  "?thumbnail=true" +
+                  "&" +
+                  props.imageCacheRenderer
                 }
                 title={fileName}
                 alt="previewImage"
@@ -229,6 +247,7 @@ const PreviewArea = (props) => {
         fileName={viewFileName}
         uploadedFiles={props.uploadedFiles}
         isUplodFileViewerVisible={isUplodFileViewerVisible}
+        closedUploadFileEditor={closedUploadFileEditor}
       />
     </>
   );

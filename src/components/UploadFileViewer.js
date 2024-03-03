@@ -73,7 +73,6 @@ const UploadFileViewer = (props) => {
               "/" +
               fileName
             }
-            download
           >
             {fileName}
             <img
