@@ -7,7 +7,7 @@ import { Input } from "antd";
 import { FileImageTwoTone, CloseSquareTwoTone } from "@ant-design/icons";
 import * as CommonFunc from "../common/CommonFunc.js";
 import ViewService from "../services/ViewService.js";
-import UploadFileViewer from "./UploadFileViewer.js";
+import UploadFileViewer from "./UploadFileEditor.js";
 const config = process.env;
 
 /**
