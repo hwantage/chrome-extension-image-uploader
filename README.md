@@ -1,5 +1,7 @@
 # 크롬 익스텐션 UI 문제점 신고 기능
 
+![chromeimageupload](https://github.com/hwantage/chrome-extension-image-uploader/assets/82494320/a8a101e4-38c2-4c59-9ccf-04289918ec49)
+
 Create-react-app 으로 시작한 코드입니다.
 
 CRA 에서 크롬 익스텐션 개발을 위한 환경을 제공합니다. (Boilerplate code)
@@ -17,7 +19,7 @@ React 환경으로 크롬 익스텐션을 개발 해 볼 수 있으며, 로컬 �
 - antd 를 이용하여 UI 를 구성하였음.
 - 이미지 업로드 기능을 제공. 별도의 서버 실행이 필요합니다.(서버 소스 포함)
 - 로컬 테스트가 가능하도록 코드를 배포합니다.
-- 이미지 선택 업로드 뿐만 아니라 클립보드 내용을 copy & paste 로 업로드 처리가 가능합니다.
+- 이미지 선택 업로드와 클립보드 내용을 copy & paste 로 업로드 처리가 가능합니다.
 
 ## Installation
 
